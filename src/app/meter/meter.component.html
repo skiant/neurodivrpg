@@ -1,0 +1,23 @@
+<p>
+  Current status: {{meter.getMeter()}}
+</p>
+<p>
+  Display style:
+  <select [(ngModel)]="meter.themeName">
+    <option *ngFor="let theme of meter.availableThemes" [value]="theme.name">
+      {{theme.filled.repeat(7)}}{{theme.empty.repeat(3)}}
+    </option>
+  </select>
+
+  Unit:
+  <select [(ngModel)]="meter.unit">
+    <option *ngFor="let unit of meter.availableUnits" [value]="unit">{{unit}}</option>
+  </select>
+</p>
+
+<p>
+  <input type="number" [(ngModel)]="pointsDelta"><button (click)="losePoints()">{{meter.unit}} lost</button>
+</p>
+<p>
+  <button (click)="refillCounter()">Refill {{meter.unit}}</button>
+</p>
