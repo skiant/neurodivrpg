@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-export enum meterChange {gain, loss};
+export enum storageChange {gain, loss};
 export const units = ['APs', 'MPs', 'EPs', 'SPs', 'HPs', 'Spoons', 'Feelsbucks'];
 
 type emojiTheme = {
@@ -19,7 +19,7 @@ const emojiThemes = [
   {empty: '💸', filled: '💵', name: 'bucks'},
 ];
 
-export default class Meter {
+export default class Storage {
   max: number = 10;
   current: number = 10;
   unit: string = units[0];
@@ -27,7 +27,7 @@ export default class Meter {
   availableThemes = emojiThemes;
   availableUnits = units;
 
-  getMeter (): string {
+  getGauge (): string {
     const {max, current, themeName, availableThemes} = this;
     const theme = _.find(availableThemes, {name: themeName});
 
@@ -38,8 +38,8 @@ export default class Meter {
     this.unit = units[selectedUnit] || units[0];
   }
 
-  changeAmount (changeType: meterChange, delta: number): void {
-    if (changeType === meterChange.gain) {
+  changeAmount (changeType: storageChange, delta: number): void {
+    if (changeType === storageChange.gain) {
       this.current = Math.min(this.current + delta, this.max);
     } else {
       this.current = Math.max(this.current - delta, 0);

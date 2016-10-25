@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { MeterComponent } from './meter/meter.component';
+import { GaugeComponent } from './gauge/gauge.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MeterComponent
+    GaugeComponent
   ],
   imports: [
     BrowserModule,
