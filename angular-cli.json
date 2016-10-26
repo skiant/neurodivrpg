@@ -1,7 +1,7 @@
 {
   "project": {
-    "name": "neurodivrpg"
-    "version": "1.0.0-beta.18",
+    "name": "neurodivrpg",
+    "version": "1.0.0-beta.18"
   },
   "apps": [
     {
