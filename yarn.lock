@@ -79,6 +79,11 @@
   version "4.14.37"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.37.tgz#9a2169db336c87dc289c8d0aec2e5aa707feba2b"
 
+"@types/lodash#4.14.38":
+  name "@types/lodash"
+  version "4.14.38"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.38.tgz#fcbd51e740c5e260652cad975dd26c5c4151cb11"
+
 "@types/node@^6.0.35", "@types/node@^6.0.42":
   version "6.0.45"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.45.tgz#c4842a9d653d767831e4ff495b6008cc0d579966"
