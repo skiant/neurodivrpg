@@ -1,0 +1,8 @@
+scss_files: src/**/*.scss
+
+linters:
+  Indentation:
+    character: space
+    width: 2
+  SelectorFormat:
+    convention: camel_case

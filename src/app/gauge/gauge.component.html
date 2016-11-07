@@ -1,23 +1,35 @@
-<p>
-  Current status: {{storage.getGauge()}}
-</p>
-<p>
-  Display style:
-  <select [(ngModel)]="storage.themeName">
-    <option *ngFor="let theme of storage.availableThemes" [value]="theme.name">
-      {{theme.filled.repeat(7)}}{{theme.empty.repeat(3)}}
-    </option>
-  </select>
+<button class="settingsToggle" (click)="toggleSettingsVisibility()">⚙</button>
 
-  Unit:
-  <select [(ngModel)]="storage.unit">
-    <option *ngFor="let unit of storage.availableUnits" [value]="unit">{{unit}}</option>
-  </select>
+<p class="settings" [ngClass]="{
+  visible: settingsOpen
+}">
+  <label class="setting" for="themeSelector">
+    <span class="settingName">Display style:</span>
+    <select id="themeSelector" [(ngModel)]="storage.themeName">
+      <option *ngFor="let theme of storage.availableThemes" [value]="theme.name">
+        {{theme.filled.repeat(7)}}{{theme.empty.repeat(3)}}
+      </option>
+    </select>
+  </label>
+
+  <label class="setting" for="unitSelector">
+    <span class="settingName">Unit:</span>
+    <select id="unitSelector" [(ngModel)]="storage.unit">
+      <option *ngFor="let unit of storage.availableUnits" [value]="unit">{{unit}}</option>
+    </select>
+  </label>
 </p>
 
-<p>
-  <input type="number" [(ngModel)]="pointsDelta"><button (click)="losePoints()">{{storage.unit}} lost</button>
+<p class="display">
+  {{storage.getGauge()}}
 </p>
-<p>
-  <button (click)="refillCounter()">Refill {{storage.unit}}</button>
-</p>
+
+<div class="actions">
+  <p class="action">
+    <input type="number" [(ngModel)]="pointsDelta">
+    <button (click)="losePoints()">{{storage.unit}} lost</button>
+  </p>
+  <p class="action">
+    <button (click)="refillCounter()">Refill {{storage.unit}}</button>
+  </p>
+</div>

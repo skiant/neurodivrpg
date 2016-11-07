@@ -4,15 +4,20 @@ import Storage, {storageChange} from './storage.model';
 @Component({
   selector: 'app-gauge',
   templateUrl: './gauge.component.html',
-  styleUrls: ['./gauge.component.css']
+  styleUrls: ['./gauge.component.scss']
 })
 export class GaugeComponent implements OnInit {
   storage: Storage;
   pointsDelta: number = 1;
+  settingsOpen: Boolean = false;
 
   constructor() { }
 
-  ngOnInit() {
+  toggleSettingsVisibility () {
+    this.settingsOpen = !this.settingsOpen;
+  }
+
+  ngOnInit () {
     this.storage = new Storage();
   }
 
