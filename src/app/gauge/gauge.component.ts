@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Storage, {storageChange} from './storage.model';
+import { SettingsService } from 'app/settings.service';
 
 @Component({
   selector: 'app-gauge',
@@ -11,7 +12,7 @@ export class GaugeComponent implements OnInit {
   pointsDelta: number = 1;
   settingsOpen: Boolean = false;
 
-  constructor() { }
+  constructor(private settingsService: SettingsService) { }
 
   toggleSettingsVisibility () {
     this.settingsOpen = !this.settingsOpen;
